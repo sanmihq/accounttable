@@ -1,7 +1,15 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import React from "react";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  if (pathname !== "/") {
+    return null;
+  }
+
   return (
     <header>
       <nav className="flex items-center justify-between border-b border-gray-300 p-4">
