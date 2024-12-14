@@ -13,9 +13,7 @@ export default function AppLayout({
 }>) {
   return (
     <body>
-      <SidebarProvider>
-        {children}
-      </SidebarProvider>
+      <SidebarProvider>{children}</SidebarProvider>
     </body>
   );
 }
