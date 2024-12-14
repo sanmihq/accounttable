@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  LogOut,
-} from "lucide-react";
+import { BadgeCheck, Bell, ChevronsUpDown, LogOut } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -23,6 +18,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { useSignOut } from "@/hooks/useSignOut";
 
 export function NavUser({
   user,
@@ -34,6 +30,7 @@ export function NavUser({
   };
 }) {
   const { isMobile } = useSidebar();
+  const { handleSignOut } = useSignOut();
 
   return (
     <SidebarMenu>
@@ -85,7 +82,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={() => handleSignOut("/")}>
               <LogOut />
               Log out
             </DropdownMenuItem>
