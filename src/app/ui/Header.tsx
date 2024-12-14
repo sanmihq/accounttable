@@ -16,11 +16,13 @@ export default function Header() {
     <header>
       <nav className="flex items-center justify-between border-b border-gray-300 p-4">
         <div className="text-gray-800">Accounttable</div>
-        <div>
-          <Button asChild>
-            <Link href="/sign-in">Get Started</Link>
+        <div className="flex items-center gap-4">
+          <Button asChild variant="secondary">
+            <Link href="/sign-in">Log In</Link>
           </Button>
-          <SignOutButton/>
+          <Button asChild>
+            <Link href="/sign-up">Get Started</Link>
+          </Button>
         </div>
       </nav>
     </header>
