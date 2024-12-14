@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,5 +11,11 @@ export default function AppLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <body>{children}</body>;
+  return (
+    <body>
+      <SidebarProvider>
+        {children}
+      </SidebarProvider>
+    </body>
+  );
 }
